@@ -1,0 +1,25 @@
+class Solution
+{   
+    public:
+    //Function to return list of integers visited in snake pattern in matrix.
+    vector<int> snakePattern(vector<vector<int> > matrix)
+    {   
+        // code here
+         int len = matrix[0].size();
+        std::vector<int> result;
+        
+        for (int i = 0; i < len; i++) {
+            if (i % 2 == 0) {
+                for (int j = 0; j < len; j++) {
+                    result.push_back(matrix[i][j]);
+                }
+            } else {
+                for (int k = len - 1; k >= 0; k--) {
+                    result.push_back(matrix[i][k]);
+                }
+            }
+        }
+        
+        return result;
+    }
+};
